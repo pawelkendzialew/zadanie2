@@ -25,25 +25,29 @@ struct Przedmiot
 
 Przedmiot wypelnijPrzedmiot(const char* nazwa, sztukiZlota wartosc, TypRzadkosci typ);
 
-void efektMagiczny1(int mana);
+void (*efektMagiczny1)(int);
 
-void efektMagiczny2(int mana);
+void (*efektMagiczny2)(int);
 
 #endif
 
 void efektMagiczny1(int mana)
 {
-
+char *efekt1 = {"Ognista flara"};
+char *efekt2 = {"Ognista kula"};
+char *efekt3 = {"Ogniste tornado"};
 }
 void efektMagiczny2(int mana)
 {
-
+char *efekt1 = {"Ognista flara"};
+char *efekt2 = {"Ognista kula"};
+char *efekt3 = {"Ogniste tornado"};
 }
 
 Przedmiot wypelnijPrzedmiot(const char* nazwa, sztukiZlota wartosc, TypRzadkosci typ)
 {
 	Przedmiot nowy;
-	strncpy_s(nowy.nazwa, nazwa, ROZMIAR_TXT);
+	strncpy(nowy.nazwa, nazwa, ROZMIAR_TXT);
 	nowy.nazwa[ROZMIAR_TXT] = '\0';
 	nowy.wartosc = wartosc;
 	nowy.rzadkosc = typ;
